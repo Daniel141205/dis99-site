@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="bg">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Свържи се с нас | Счетоводна кантора „ДИС 99“</title>
+    <meta
+      name="description"
+      content="Свържете се със Счетоводна кантора „ДИС 99“ – запитване за услуги, оферта или консултация. Пловдив и дистанционно."
+    />
+    <link rel="stylesheet" href="../css/style.css?v=20260124-2" />
+
+    <style>
+      /* Page-specific (kept minimal, DHR-ish clean layout) */
+      .contact-hero {
+        padding: 56px 0 24px;
+        background:
+          radial-gradient(
+            900px 500px at 20% 10%,
+            rgba(29, 100, 242, 0.12),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 500px at 90% 20%,
+            rgba(11, 31, 54, 0.1),
+            transparent 55%
+          );
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 20px;
+        align-items: start;
+      }
+      .panel {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+      .panel + .panel {
+        margin-top: 16px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 12px;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .field.full {
+        grid-column: 1 / -1;
+      }
+
+      label {
+        font-size: 13px;
+        color: var(--muted);
+        font-weight: 650;
+      }
+      input,
+      select,
+      textarea {
+        font: inherit;
+        padding: 12px 12px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: #fff;
+        outline: none;
+        transition:
+          border-color var(--dur-1) var(--ease-soft),
+          box-shadow var(--dur-1) var(--ease-soft);
+      }
+      textarea {
+        min-height: 130px;
+        resize: vertical;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: rgba(29, 100, 242, 0.55);
+        box-shadow: 0 0 0 4px rgba(29, 100, 242, 0.12);
+      }
+
+      .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 14px;
+        align-items: center;
+      }
+      .notice {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 10px;
+        line-height: 1.5;
+      }
+
+      .list {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+
+      /* Status banner styles */
+      .form-status {
+        display: none;
+        margin-top: 12px;
+        padding: 10px 12px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: var(--soft);
+        color: var(--ink);
+      }
+      .form-status.show {
+        display: block;
+      }
+      .form-status.ok {
+        border-color: rgba(16, 185, 129, 0.35);
+        background: rgba(16, 185, 129, 0.08);
+      }
+      .form-status.err {
+        border-color: rgba(239, 68, 68, 0.35);
+        background: rgba(239, 68, 68, 0.08);
+      }
+
+      @media (max-width: 900px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Пропусни към съдържанието</a>
+
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="logo" href="../index.html" aria-label="Начало">
+          <img class="logo-mark" src="../logo.png" alt="ДИС 99 лого" />
+          <span class="logo-text">Счетоводна кантора „ДИС 99“</span>
+        </a>
+
+        <nav class="nav" aria-label="Основна навигация">
+          <button
+            class="nav-toggle"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+          >
+            Меню
+          </button>
+
+          <ul id="nav-menu" class="nav-menu">
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="pricing.html">Цени</a></li>
+            <li><a href="about.html">За нас</a></li>
+            <li><a href="faq.html">Въпроси</a></li>
+            <li><a class="btn btn-small" href="contact.html">Контакти</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="contact-hero">
+        <div class="container">
+          <div class="reveal">
+            <h1 style="margin-top: 12px">Свържете се с нас</h1>
+            <p class="lead">
+              Опишете накратко дейността на фирмата и нуждите си. Ще Ви върнем
+              имейл и ясна следваща стъпка.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Content -->
+      <section class="section">
+        <div class="container contact-grid">
+          <!-- Left: Form -->
+          <section class="panel reveal" aria-label="Форма за контакт">
+            <h2 class="h3" style="margin: 0 0 6px">Запитване</h2>
+            <p class="small">
+              <span class="required-text">Полетата със * са задължителни.</span>
+            </p>
+
+            <form
+              id="contactForm"
+              method="POST"
+              class="form-grid"
+              autocomplete="on"
+              novalidate
+            >
+              <!-- ✅ FormSubmit settings -->
+              <input
+                type="hidden"
+                name="_subject"
+                value="Ново запитване от сайта DIS 99"
+              />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+
+              <!-- Honeypot (spam protection) -->
+              <input
+                type="text"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+                style="
+                  position: absolute;
+                  left: -9999px;
+                  height: 0;
+                  width: 0;
+                  opacity: 0;
+                "
+              />
+
+              <div class="field">
+                <label for="name">Име *</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Вашето име"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label for="company">Фирма (по избор)</label>
+                <input
+                  id="company"
+                  name="company"
+                  type="text"
+                  placeholder="Име на фирма"
+                />
+              </div>
+
+              <div class="field">
+                <label for="email">Email *</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="name@domain.bg"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label for="phone">Телефон (по избор)</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="+359..."
+                />
+              </div>
+
+              <div class="field full">
+                <label for="topic">Тема *</label>
+                <select id="topic" name="topic" required>
+                  <option value="" selected disabled>Изберете тема…</option>
+                  <option value="accounting">Текущо счетоводство</option>
+                  <option value="vat">ДДС / VIES</option>
+                  <option value="payroll">ТРЗ / служители</option>
+                  <option value="annual">Годишно приключване (ГФО)</option>
+                  <option value="consulting">Консултация / казус</option>
+                  <option value="other">Друго</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="message">Съобщение *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Опишете накратко вашия въпрос тук"
+                  required
+                ></textarea>
+
+                <div
+                  id="formStatus"
+                  class="form-status"
+                  role="status"
+                  aria-live="polite"
+                ></div>
+              </div>
+
+              <div class="field full">
+                <label>
+                  <input type="checkbox" name="consent" required />
+                  Прочетох и приемам
+                  <a href="privacy.html">Политика за поверителност</a>
+                </label>
+                <div class="notice">
+                  *Повече информация:
+                  <a href="privacy.html">Политика за поверителност</a> и
+                  <a href="cookies.html">Политика за бисквитки</a>.
+                </div>
+              </div>
+
+              <div class="field full">
+                <div class="actions">
+                  <button class="btn" type="submit" id="sendBtn">
+                    Изпрати
+                  </button>
+                  <a class="btn btn-ghost" href="services.html">Виж услуги</a>
+                </div>
+              </div>
+            </form>
+          </section>
+
+          <!-- Right: Info -->
+          <div>
+            <section class="panel reveal" aria-label="Контактни данни">
+              <h2 class="h3" style="margin: 0 0 8px">Контакт</h2>
+              <p class="bold" style="margin: 0">
+                Email: <a href="mailto:dis99@abv.bg">dis99@abv.bg</a><br />
+                Телефон: <a href="tel:+359885738666">+359 885 738 666</a><br />
+              </p>
+
+              <ul class="list">
+                <li>Отговор до 1 работен ден</li>
+                <li>Пловдив и дистанционно</li>
+                <li>Договор и конфиденциалност</li>
+              </ul>
+            </section>
+
+            <section class="map-card">
+              <h2 class="h3" style="margin: 0 0 8px">Къде се намираме?</h2>
+
+              <div class="footer-map" style="margin-top: 8px">
+                <iframe
+                  class="map-embed map-embed--small"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d369.76337182186046!2d24.7876209!3d42.1479976!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acd18929fd9b17%3A0x2dfa24621c671ac!2z0JTQmNChIDk5!5e0!3m2!1sen!2sbg!4v1769277420231!5m2!1sen!2sbg"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <p class="footer-address" style="margin-top: 10px">
+                Адрес: Пловдив, бул. Цариградско шосе № 112
+              </p>
+            </section>
+
+            <section class="panel reveal" aria-label="Работно време">
+              <h2 class="h3" style="margin: 0 0 8px">Работно време</h2>
+              <p class="bold" style="margin: 0">
+                Понеделник–Петък: 09:00–17:00<br />
+                Събота–Неделя: почивни дни
+              </p>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="footer-brand">Счетоводна кантора „ДИС 99”</div>
+          <p class="small" style="margin-top: 8px">
+            Адрес: Пловдив, бул. Цариградско шосе № 112
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-title">Контакти</div>
+
+          <div class="contact-box">
+            <div class="contact-row">
+              <span class="icon-circle" aria-hidden="true">
+                <!-- Location icon -->
+                <svg viewBox="0 0 24 24">
+                  <path
+                    fill="currentColor"
+                    d="M12 2c-3.9 0-7 3.1-7 7 0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.5
+                    c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"
+                  />
+                </svg>
+              </span>
+
+              <span class="contact-text">
+                Адрес: Пловдив, бул. Цариградско шосе № 112
+              </span>
+            </div>
+
+            <div class="contact-row">
+              <span class="icon-circle" aria-hidden="true">
+                <!-- Phone icon -->
+                <svg viewBox="0 0 24 24">
+                  <path
+                    fill="currentColor"
+                    d="M6.6 10.8c1.4 2.7 3.7 5 6.4 6.4l2.1-2.1c.3-.3.7-.4 1.1-.3
+                    1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1
+                    C10.1 21 3 13.9 3 5c0-.6.4-1 1-1h2.9c.6 0 1 .4 1 1
+                    0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z"
+                  />
+                </svg>
+              </span>
+
+              <span class="contact-text">
+                Тел: <a href="tel:+359885738666">+359 885 738 666</a>
+              </span>
+            </div>
+
+            <div class="contact-row">
+              <span class="icon-circle" aria-hidden="true">
+                <!-- Email icon -->
+                <svg viewBox="0 0 24 24">
+                  <path
+                    fill="currentColor"
+                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4
+                    -8 5-8-5V6l8 5 8-5v2z"
+                  />
+                </svg>
+              </span>
+
+              <span class="contact-text">
+                Email: <a href="mailto:dis99@abv.bg">dis99@abv.bg</a>
+              </span>
+            </div>
+
+            <div class="contact-row">
+              <span class="icon-circle" aria-hidden="true">
+                <!-- Clock icon -->
+                <svg viewBox="0 0 24 24">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="9"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M12 7v6l4 2"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+
+              <span class="contact-text">
+                Работно време: Пн–Пт 09:00–17:00
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Политики</div>
+          <ul class="footer-links">
+            <li>
+              <a href="/pages/privacy.html"
+                >Политика&nbsp;за&nbsp;поверителност</a
+              >
+            </li>
+            <li><a href="/pages/cookies.html">Политика за бисквитки</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom small">
+        © <span id="year"></span> Счетоводна кантора „ДИС 99“. Всички права
+        запазени.
+      </div>
+    </footer>
+
+    <script src="../js/main.js?v=20260127-1" defer></script>
+  </body>
+</html>
