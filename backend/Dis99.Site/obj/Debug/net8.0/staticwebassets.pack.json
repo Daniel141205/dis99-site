@@ -1,0 +1,69 @@
+{
+  "Files": [
+    {
+      "Id": "/mnt/c/Dis99_website/backend/Dis99.Site/wwwroot/css/style.css",
+      "PackagePath": "staticwebassets/css/style.css"
+    },
+    {
+      "Id": "/mnt/c/Dis99_website/backend/Dis99.Site/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/mnt/c/Dis99_website/backend/Dis99.Site/wwwroot/js/main.js",
+      "PackagePath": "staticwebassets/js/main.js"
+    },
+    {
+      "Id": "/mnt/c/Dis99_website/backend/Dis99.Site/wwwroot/pages/about.html",
+      "PackagePath": "staticwebassets/pages/about.html"
+    },
+    {
+      "Id": "/mnt/c/Dis99_website/backend/Dis99.Site/wwwroot/pages/contact.html",
+      "PackagePath": "staticwebassets/pages/contact.html"
+    },
+    {
+      "Id": "/mnt/c/Dis99_website/backend/Dis99.Site/wwwroot/pages/cookies.html",
+      "PackagePath": "staticwebassets/pages/cookies.html"
+    },
+    {
+      "Id": "/mnt/c/Dis99_website/backend/Dis99.Site/wwwroot/pages/faq.html",
+      "PackagePath": "staticwebassets/pages/faq.html"
+    },
+    {
+      "Id": "/mnt/c/Dis99_website/backend/Dis99.Site/wwwroot/pages/pricing.html",
+      "PackagePath": "staticwebassets/pages/pricing.html"
+    },
+    {
+      "Id": "/mnt/c/Dis99_website/backend/Dis99.Site/wwwroot/pages/privacy.html",
+      "PackagePath": "staticwebassets/pages/privacy.html"
+    },
+    {
+      "Id": "/mnt/c/Dis99_website/backend/Dis99.Site/wwwroot/pages/services.html",
+      "PackagePath": "staticwebassets/pages/services.html"
+    },
+    {
+      "Id": "/mnt/c/Dis99_website/backend/Dis99.Site/wwwroot/robots.html",
+      "PackagePath": "staticwebassets/robots.html"
+    },
+    {
+      "Id": "/mnt/c/Dis99_website/backend/Dis99.Site/wwwroot/sitemap.html",
+      "PackagePath": "staticwebassets/sitemap.html"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.Dis99.Site.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.Dis99.Site.props",
+      "PackagePath": "build\\Dis99.Site.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.Dis99.Site.props",
+      "PackagePath": "buildMultiTargeting\\Dis99.Site.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.Dis99.Site.props",
+      "PackagePath": "buildTransitive\\Dis99.Site.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

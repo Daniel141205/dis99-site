@@ -1,0 +1,17 @@
+/var/www/dis99/Dis99.Site
+/var/www/dis99/publish/web.config
+/var/www/dis99/appsettings.Development.json
+/var/www/dis99/appsettings.json
+/var/www/dis99/publish/appsettings.Development.json
+/var/www/dis99/publish/appsettings.json
+/var/www/dis99/publish/Dis99.Site.deps.json
+/var/www/dis99/publish/Dis99.Site.runtimeconfig.json
+/var/www/dis99/Dis99.Site.dll
+/var/www/dis99/Dis99.Site.deps.json
+/var/www/dis99/Dis99.Site.runtimeconfig.json
+/var/www/dis99/Dis99.Site.pdb
+/var/www/dis99/BouncyCastle.Cryptography.dll
+/var/www/dis99/MailKit.dll
+/var/www/dis99/MimeKit.dll
+/var/www/dis99/System.Security.Cryptography.Pkcs.dll
+/var/www/dis99/runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll
