@@ -814,3 +814,7 @@ h1 {
         font-size: 40px;
     }
 }
+
+body {
+    background: red !important;
+}
