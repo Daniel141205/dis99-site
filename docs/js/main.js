@@ -1,10 +1,7 @@
-
 (function () {
-    // Footer year
     const year = document.getElementById("year");
     if (year) year.textContent = new Date().getFullYear();
 
-    // Mobile menu
     const toggle = document.querySelector(".nav-toggle");
     const menu = document.querySelector(".nav-menu");
 
@@ -22,8 +19,7 @@
 
     if (toggle && menu) {
         toggle.addEventListener("click", () => {
-            const isOpen = menu.classList.contains("open");
-            isOpen ? closeMenu() : openMenu();
+            menu.classList.contains("open") ? closeMenu() : openMenu();
         });
 
         document.addEventListener("click", (e) => {
@@ -35,64 +31,76 @@
         });
 
         menu.addEventListener("click", (e) => {
-            const a = e.target.closest("a");
-            if (a) closeMenu();
+            if (e.target.closest("a")) closeMenu();
         });
     }
 
-    const targets = document.querySelectorAll(".reveal, .stagger");
-    if (targets.length) {
-        const io = new IntersectionObserver(
+    const revealTargets = document.querySelectorAll(".reveal, .stagger");
+
+    if ("IntersectionObserver" in window && revealTargets.length) {
+        const revealObserver = new IntersectionObserver(
             (entries) => {
-                for (const entry of entries) {
+                entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("show");
-                        io.unobserve(entry.target);
+                        revealObserver.unobserve(entry.target);
                     }
-                }
+                });
             },
             { threshold: 0.12, rootMargin: "0px 0px -10% 0px" }
         );
 
-        targets.forEach((t) => io.observe(t));
+        revealTargets.forEach((target) => revealObserver.observe(target));
+    } else {
+        revealTargets.forEach((target) => target.classList.add("show"));
     }
 
     const counters = document.querySelectorAll(".counter");
-    if (counters.length) {
-        const animate = (el) => {
-            const target = Number(el.dataset.target || "0");
-            const start = performance.now();
-            const dur = 3000;
 
-            const tick = (now) => {
-                const t = Math.min(1, (now - start) / dur);
-                const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
-                el.textContent = Math.round(eased * target).toString();
-                if (t < 1) requestAnimationFrame(tick);
-                else el.textContent = target.toString();
-            };
+    function animateCounter(el) {
+        const target = Number(el.dataset.target || "0");
+        const start = performance.now();
+        const duration = 3000;
 
-            requestAnimationFrame(tick);
-        };
+        function tick(now) {
+            const progress = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - progress, 3);
 
-        const io = new IntersectionObserver(
+            el.textContent = Math.round(eased * target).toString();
+
+            if (progress < 1) {
+                requestAnimationFrame(tick);
+            } else {
+                el.textContent = target.toString();
+            }
+        }
+
+        requestAnimationFrame(tick);
+    }
+
+    if ("IntersectionObserver" in window && counters.length) {
+        const counterObserver = new IntersectionObserver(
             (entries) => {
-                for (const entry of entries) {
-                    if (entry.isIntersecting) {
-                        if (entry.target.dataset.done === "1") return;
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && entry.target.dataset.done !== "1") {
                         entry.target.dataset.done = "1";
-                        animate(entry.target);
-                        io.unobserve(entry.target);
+                        animateCounter(entry.target);
+                        counterObserver.unobserve(entry.target);
                     }
-                }
+                });
             },
             { threshold: 0.35 }
         );
 
-        counters.forEach((c) => io.observe(c));
+        counters.forEach((counter) => counterObserver.observe(counter));
+    } else {
+        counters.forEach((counter) => {
+            counter.textContent = counter.dataset.target || "0";
+        });
     }
 
     const contactForm = document.getElementById("contactForm");
+
     if (contactForm) {
         contactForm.addEventListener("submit", async (e) => {
             e.preventDefault();
@@ -113,6 +121,7 @@
                 btn.disabled = true;
                 btn.textContent = "Изпращане…";
             }
+
             setStatus("ok", "Изпращане…");
 
             const topic = contactForm.querySelector("#topic")?.value || "";
@@ -124,6 +133,7 @@
                 consulting: "Консултация / казус",
                 other: "Друго",
             };
+
             const topicBg = map[topic] || "Запитване";
 
             try {
@@ -157,6 +167,4 @@
             }
         });
     }
-
-
 })();
