@@ -133,13 +133,11 @@ a:hover {
     font-weight: 750;
     text-decoration: none;
     color: var(--accent-ink);
-    background-image: linear-gradient(
-        90deg,
-        var(--accent) 0%,
-        var(--accent) 50%,
-        #60a5fa 50%,
-        #93c5fd 100%
-    );
+    background-image: linear-gradient(90deg,
+            var(--accent) 0%,
+            var(--accent) 50%,
+            #60a5fa 50%,
+            #93c5fd 100%);
     background-size: 200% 100%;
     background-position: left center;
     box-shadow: 0 8px 20px rgba(29, 100, 242, 0.18);
@@ -175,10 +173,11 @@ a:hover {
     align-items: center;
     color: #fff;
     background:
-        radial-gradient(1200px 600px at 50% -10%, rgba(29, 100, 242, 0.45), transparent 60%),
-        radial-gradient(900px 500px at 80% 20%, rgba(96, 165, 250, 0.25), transparent 60%),
-        radial-gradient(700px 400px at 20% 30%, rgba(37, 99, 235, 0.25), transparent 60%),
-        linear-gradient(180deg, #050d1a 0%, #07182b 45%, #0b1f36 100%);
+        radial-gradient(circle at 50% 48%, rgba(29, 100, 242, 0.75) 0%, rgba(29, 100, 242, 0.42) 22%, transparent 52%),
+        radial-gradient(circle at 50% 0%, rgba(96, 165, 250, 0.45) 0%, transparent 42%),
+        radial-gradient(circle at 85% 30%, rgba(37, 99, 235, 0.28) 0%, transparent 35%),
+        radial-gradient(circle at 15% 30%, rgba(59, 130, 246, 0.22) 0%, transparent 38%),
+        linear-gradient(180deg, #020817 0%, #07182b 45%, #020817 100%);
 }
 
 .home-page .hero::before {
@@ -187,8 +186,8 @@ a:hover {
     inset: 0;
     pointer-events: none;
     background:
-        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
     background-size: 70px 70px;
     mask-image: radial-gradient(circle at 50% 20%, black, transparent 70%);
 }
@@ -267,13 +266,11 @@ a:hover {
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    background-image: linear-gradient(
-        90deg,
-        #ffffff 0%,
-        #ffffff 50%,
-        #dbeafe 50%,
-        #60a5fa 100%
-    );
+    background-image: linear-gradient(90deg,
+            #ffffff 0%,
+            #ffffff 50%,
+            #dbeafe 50%,
+            #60a5fa 100%);
     box-shadow:
         0 0 0 rgba(29, 100, 242, 0),
         0 10px 40px rgba(29, 100, 242, 0.35),
@@ -424,13 +421,11 @@ a:hover {
     border-radius: 999px;
     color: #07182b;
     font-weight: 900;
-    background-image: linear-gradient(
-        90deg,
-        #ffffff 0%,
-        #ffffff 50%,
-        #dbeafe 50%,
-        #60a5fa 100%
-    );
+    background-image: linear-gradient(90deg,
+            #ffffff 0%,
+            #ffffff 50%,
+            #dbeafe 50%,
+            #60a5fa 100%);
 }
 
 /* FOOTER */
