@@ -23,7 +23,9 @@
         });
 
         document.addEventListener("click", (e) => {
-            if (!menu.contains(e.target) && !toggle.contains(e.target)) closeMenu();
+            if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+                closeMenu();
+            }
         });
 
         document.addEventListener("keydown", (e) => {
@@ -35,7 +37,7 @@
         });
     }
 
-    const revealTargets = document.querySelectorAll(".reveal, .stagger");
+    const revealTargets = document.querySelectorAll(".reveal");
 
     if ("IntersectionObserver" in window && revealTargets.length) {
         const revealObserver = new IntersectionObserver(
@@ -65,7 +67,6 @@
         function tick(now) {
             const progress = Math.min(1, (now - start) / duration);
             const eased = 1 - Math.pow(1 - progress, 3);
-
             el.textContent = Math.round(eased * target).toString();
 
             if (progress < 1) {
@@ -96,75 +97,6 @@
     } else {
         counters.forEach((counter) => {
             counter.textContent = counter.dataset.target || "0";
-        });
-    }
-
-    const contactForm = document.getElementById("contactForm");
-
-    if (contactForm) {
-        contactForm.addEventListener("submit", async (e) => {
-            e.preventDefault();
-
-            const status = document.getElementById("formStatus");
-            const btn = document.getElementById("sendBtn");
-
-            const setStatus = (type, text) => {
-                if (!status) return;
-                status.classList.remove("ok", "err", "show");
-                status.textContent = text;
-                status.classList.add("show", type === "ok" ? "ok" : "err");
-            };
-
-            const oldText = btn ? btn.textContent : "";
-
-            if (btn) {
-                btn.disabled = true;
-                btn.textContent = "Изпращане…";
-            }
-
-            setStatus("ok", "Изпращане…");
-
-            const topic = contactForm.querySelector("#topic")?.value || "";
-            const map = {
-                accounting: "Текущо счетоводство",
-                vat: "ДДС / VIES",
-                payroll: "ТРЗ / служители",
-                annual: "Годишно приключване (ГФО)",
-                consulting: "Консултация / казус",
-                other: "Друго",
-            };
-
-            const topicBg = map[topic] || "Запитване";
-
-            try {
-                const fd = new FormData(contactForm);
-
-                fd.set("_subject", `Запитване: ${topicBg} | Счетоводна къща „ДИС 99“`);
-
-                const senderEmail = contactForm.querySelector("#email")?.value || "";
-                if (senderEmail) fd.set("_replyto", senderEmail);
-
-                const res = await fetch("https://formsubmit.co/ajax/hristt72@abv.bg", {
-                    method: "POST",
-                    headers: { Accept: "application/json" },
-                    body: fd,
-                });
-
-                if (res.ok) {
-                    contactForm.reset();
-                    setStatus("ok", "✅ Запитването е изпратено успешно!");
-                    setTimeout(() => location.reload(), 1800);
-                } else {
-                    setStatus("err", "❌ Неуспешно изпращане. Опитайте отново.");
-                }
-            } catch {
-                setStatus("err", "❌ Грешка при връзка. Опитайте отново.");
-            } finally {
-                if (btn) {
-                    btn.disabled = false;
-                    btn.textContent = oldText || "Изпрати";
-                }
-            }
         });
     }
 })();
