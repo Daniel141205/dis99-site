@@ -1,0 +1,14 @@
+# Local raw photo archive (large, not for the repo)
+/Снежи и Жоро*/
+/*.zip
+
+# Python build cache
+__pycache__/
+*.pyc
+
+# Local editor/agent settings
+.claude/settings.local.json
+
+# .NET build output
+backend/Dis99.Site/bin/
+backend/Dis99.Site/obj/

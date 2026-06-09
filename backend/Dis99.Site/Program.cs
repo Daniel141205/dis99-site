@@ -26,26 +26,6 @@ static SecureSocketOptions GetSocketOptions(string? v)
     };
 }
 
-app.MapGet("/api/debug/env", () =>
-{
-    var host = Env("SMTP_HOST");
-    var port = Env("SMTP_PORT");
-    var user = Env("SMTP_USER");
-    var pass = Env("SMTP_PASS");
-
-    return Results.Json(new
-    {
-        host,
-        port,
-        user,
-        passPresent = !string.IsNullOrWhiteSpace(pass),
-        passLength = pass?.Length ?? 0,
-        ssl = Env("SMTP_SSL"),
-        mailTo = Env("MAIL_TO"),
-        mailFrom = Env("MAIL_FROM")
-    });
-});
-
 app.MapPost("/api/contact", async (HttpRequest request, ILogger<Program> log) =>
 {
     try

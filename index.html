@@ -3,155 +3,423 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Счетоводна къща “ДИС 99” | Счетоводство, ДДС, ТРЗ</title>
+    <title>Счетоводна къща ДИС 99 — счетоводство в Пловдив | ДДС, ГФО, ТРЗ</title>
     <meta
       name="description"
-      content="Професионално счетоводно обслужване за фирми и свободни професии. ДДС, ГФО, ТРЗ, консултации. София и дистанционно."
+      content="Счетоводна къща ДИС 99 в Пловдив — професионално счетоводно обслужване за малък и среден бизнес от 2008 г. Фиксирани срокове, личен счетоводител и безплатна регистрация на фирма."
     />
-    <meta name="theme-color" content="#0b1f36" />
+    <meta name="theme-color" content="#0f1d31" />
+    <link rel="icon" href="img/logo-mark.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://dis99.bg/" />
+    <link rel="alternate" hreflang="bg" href="https://dis99.bg/" />
+    <link rel="alternate" hreflang="en" href="https://dis99.bg/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://dis99.bg/" />
 
-    <!-- ✅ FIXED PATH -->
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="bg_BG" />
+    <meta property="og:site_name" content="Счетоводна къща ДИС 99" />
+    <meta property="og:title" content="Счетоводна къща ДИС 99 — счетоводство в Пловдив" />
+    <meta property="og:description" content="Спокойно счетоводство с фиксирани срокове и личен счетоводител. ДДС, ГФО, ТРЗ и безплатна регистрация на фирма." />
+    <meta property="og:url" content="https://dis99.bg/" />
+    <meta property="og:image" content="https://dis99.bg/img/og-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preload" href="./fonts/Inter-600-cyrillic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./fonts/PlayfairDisplay-700-cyrillic.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="./css/style.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AccountingService",
+      "name": "Счетоводна къща ДИС 99",
+      "description": "Професионално счетоводно обслужване за малък и среден бизнес в Пловдив — ДДС, ГФО, ТРЗ, данъчни консултации и безплатна регистрация на фирма.",
+      "url": "https://dis99.bg/",
+      "telephone": "+359885738666",
+      "email": "dis99@abv.bg",
+      "foundingDate": "2008",
+      "priceRange": "$$",
+      "image": "https://dis99.bg/img/og-cover.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "бул. Цариградско шосе 112",
+        "addressLocality": "Пловдив",
+        "addressCountry": "BG"
+      },
+      "areaServed": { "@type": "Country", "name": "България" },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00", "closes": "17:00"
+      }]
+    }
+    </script>
   </head>
 
   <body>
-    <a class="skip-link" href="#main">Пропусни към съдържанието</a>
+    <a class="skip-link" href="#main">Към съдържанието</a>
 
-    <header class="site-header">
+    <!-- HEADER -->
+    <header class="site-header" id="header">
       <div class="container header-row">
-        <a class="logo" href="index.html" aria-label="Начало">
-          <img class="logo-mark" src="ДИС99_лого.png" alt="ДИС 99 лого" />
-
-          <span class="logo-text">Счетоводна къща “ДИС 99”</span>
+        <a class="brand" href="index.html" aria-label="ДИС 99 — начало">
+          <img class="brand-mark" src="img/logo-mark.svg" width="48" height="48" alt="" aria-hidden="true" />
+          <span class="brand-text">
+            <span class="brand-name">ДИС&nbsp;<span class="nines">99</span></span>
+            <span class="brand-sub">Счетоводна къща</span>
+          </span>
         </a>
 
-        <nav class="nav" aria-label="Основна навигация">
-          <button
-            class="nav-toggle"
-            aria-expanded="false"
-            aria-controls="nav-menu"
-          >
-            Меню
-          </button>
-          <ul id="nav-menu" class="nav-menu">
-            <li><a href="pages/services.html">Услуги</a></li>
-            <li><a href="pages/pricing.html">Цени</a></li>
-            <li><a href="pages/about.html">За нас</a></li>
-            <li><a href="pages/faq.html">Въпроси</a></li>
-            <li>
-              <a class="btn btn-small" href="pages/contact.html">Контакт</a>
-            </li>
-          </ul>
-        </nav>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-collapse" aria-label="Меню">
+          <span></span>
+        </button>
+        <div class="nav-collapse" id="nav-collapse">
+          <nav aria-label="Основна навигация">
+            <ul class="nav-menu">
+              <li><a href="pages/services.html">Услуги</a></li>
+              <li><a href="pages/pricing.html">Цени</a></li>
+              <li><a href="pages/about.html">За нас</a></li>
+              <li><a href="pages/faq.html">Въпроси</a></li>
+              <li><a href="pages/contact.html">Контакт</a></li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <div class="lang-switch" aria-label="Език">
+              <a href="index.html" aria-current="true">BG</a>
+              <a href="en/index.html">EN</a>
+            </div>
+            <a class="btn btn-primary" href="pages/contact.html">Заяви консултация</a>
+          </div>
+        </div>
       </div>
     </header>
 
     <main id="main">
+      <!-- HERO -->
       <section class="hero">
         <div class="container hero-grid">
-          <div class="reveal">
-            <p class="pill">
-              Пловдив • Дистанционно • За малък и среден бизнес
-            </p>
-            <h1>Спокойно счетоводство, ясни срокове, нулев стрес.</h1>
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Пловдив · от 2008 г.</p>
+            <h1>Спокойно счетоводство с <em>ясни срокове</em> и нулев стрес.</h1>
             <p class="lead">
-              Поемаме текущо счетоводство, ДДС, ГФО и ТРЗ. Работим прозрачно и
-              обясняваме на разбираем език.
+              Поемаме цялото текущо счетоводство, ДДС, ГФО и ТРЗ на вашия бизнес —
+              прозрачно, навреме и на разбираем език. Вие развивате фирмата, ние пазим гърба ви.
             </p>
             <div class="hero-actions">
-              <a class="btn" href="pages/contact.html">Заяви консултация</a>
-              <a class="btn btn-ghost" href="pages/services.html"
-                >Виж услугите</a
-              >
+              <a class="btn btn-primary btn-lg" href="pages/contact.html">Заяви безплатна консултация</a>
+              <a class="btn btn-ghost btn-lg" href="pages/services.html">Виж услугите</a>
             </div>
-
-            <ul class="trust">
-              <li>✅ Опит с ЕООД/ООД, свободни професии, eCommerce</li>
-              <li>✅ Срокове и напомняния</li>
-              <li>✅ Договор и конфиденциалност</li>
+            <ul class="hero-trust">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Фиксирани срокове и навременни напомняния
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Личен счетоводител, който познава бизнеса ви
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Безплатна регистрация на фирма при договор
+              </li>
             </ul>
           </div>
 
-          <div class="hero-card reveal">
-            <h2 class="h3">Най-търсени услуги</h2>
-            <ul class="checklist">
-              <li>Текущо счетоводство</li>
-              <li>ДДС декларации и VIES</li>
-              <li>Годишно приключване (ГФО)</li>
-              <li>ТРЗ и договори</li>
-              <li>Консултации при проверки</li>
-            </ul>
-            <a class="link" href="pages/services.html">Всички услуги →</a>
+          <div class="hero-figure reveal">
+            <div class="hero-portrait">
+              <picture>
+                <source type="image/webp" srcset="img/team/georgi-640.webp 640w, img/team/georgi-840.webp 840w, img/team/georgi-1080.webp 1080w" sizes="(max-width: 960px) 420px, 460px" />
+                <img src="img/team/georgi.jpg" width="1080" height="1350" alt="Георги — основател и управител на ДИС 99" loading="eager" fetchpriority="high" />
+              </picture>
+            </div>
+            <div class="hero-badge">
+              <span class="num" data-count="50" data-suffix="+">50</span>
+              <span class="lbl">активни клиенти ни се доверяват</span>
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- STATS -->
+      <section class="stats">
+        <div class="container stats-grid" data-stagger>
+          <div class="stat"><div class="stat-num"><span>2008</span></div><div class="stat-label">Година на основаване</div></div>
+          <div class="stat"><div class="stat-num"><span data-count="18">18</span><span class="suf">+</span></div><div class="stat-label">Години опит</div></div>
+          <div class="stat"><div class="stat-num"><span data-count="50">50</span><span class="suf">+</span></div><div class="stat-label">Активни клиенти</div></div>
+          <div class="stat"><div class="stat-num"><span data-count="100">100</span><span class="suf">%</span></div><div class="stat-label">Спазени срокове</div></div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
       <section class="section">
         <div class="container">
-          <h2>Как работим</h2>
-          <div class="cards stagger">
+          <div class="section-head center reveal">
+            <p class="eyebrow">Услуги</p>
+            <h2>Всичко за счетоводството ви — на едно място</h2>
+            <p class="lead">От ежедневното осчетоводяване до годишното приключване и защитата при проверки.</p>
+          </div>
+          <div class="grid grid-3" data-stagger style="margin-top: 3rem;">
             <article class="card">
-              <h3>1) Старт и договор</h3>
-              <p>Определяме обхват, срокове, документи и комуникация.</p>
+              <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg></div>
+              <h3>Текущо счетоводство</h3>
+              <p>Месечно осчетоводяване, банкови операции, каса и пълна отчетност без забавяния.</p>
+              <a class="card-link link-arrow" href="pages/services.html">Научи повече →</a>
             </article>
             <article class="card">
-              <h3>2) Месечно обслужване</h3>
-              <p>Събиране на документи, осчетоводяване, ДДС/ТРЗ, отчети.</p>
+              <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h2M8 14h2M14 10h2M14 14h2M8 18h8"/></svg></div>
+              <h3>ДДС и VIES</h3>
+              <p>Изготвяне и подаване на ДДС декларации, дневници и VIES — точно и в срок.</p>
+              <a class="card-link link-arrow" href="pages/services.html">Научи повече →</a>
             </article>
             <article class="card">
-              <h3>3) Отчети и контрол</h3>
-              <p>Периодични справки, напомняния, подготовка за проверки.</p>
+              <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></div>
+              <h3>Годишно приключване (ГФО)</h3>
+              <p>Годишни финансови отчети и данъчни декларации с навременно публикуване.</p>
+              <a class="card-link link-arrow" href="pages/services.html">Научи повече →</a>
             </article>
+            <article class="card">
+              <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg></div>
+              <h3>ТРЗ и заплати</h3>
+              <p>Трудови договори, ведомости, осигуровки и обслужване на персонала.</p>
+              <a class="card-link link-arrow" href="pages/services.html">Научи повече →</a>
+            </article>
+            <article class="card">
+              <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg></div>
+              <h3>Данъчна защита</h3>
+              <p>Консултации и съдействие при ревизии и проверки от НАП — спокойно и подготвено.</p>
+              <a class="card-link link-arrow" href="pages/services.html">Научи повече →</a>
+            </article>
+            <article class="card">
+              <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></div>
+              <h3>Регистрации и старт</h3>
+              <p>Регистрация на фирма, ДДС и стартови консултации — безплатно при сключен договор.</p>
+              <a class="card-link link-arrow" href="pages/services.html">Научи повече →</a>
+            </article>
+          </div>
+          <div class="reveal" style="text-align:center; margin-top:3rem;">
+            <a class="btn btn-primary btn-lg" href="pages/contact.html">Заяви безплатна консултация</a>
+            <p style="margin:1rem 0 0; color:var(--muted); font-size:.95rem;">Не сте сигурни от какво имате нужда? Ще ви насочим безплатно.</p>
           </div>
         </div>
       </section>
 
-      <section class="section section-muted">
-        <div class="container cta">
-          <div>
-            <h2>Искате оферта?</h2>
-            <p>
-              Пишете ни какъв бизнес имате и приблизителен брой документи на
-              месец.
-            </p>
+      <!-- WHY US (dark) -->
+      <section class="section section--dark">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Защо ДИС 99</p>
+            <h2>Три причини клиентите да останат с години</h2>
           </div>
-          <a class="btn" href="pages/contact.html">Свържи се с нас</a>
+          <div class="features" data-stagger style="margin-top: 3rem;">
+            <div class="feature">
+              <span class="feature-num">01</span>
+              <h3>Фиксирани срокове</h3>
+              <p>Знаете точно кога какво се случва. Подаваме навреме, всеки път, и ви напомняме предварително — без изненади и без глоби.</p>
+            </div>
+            <div class="feature">
+              <span class="feature-num">02</span>
+              <h3>Личен счетоводител</h3>
+              <p>Работите с конкретен човек, който познава бизнеса ви и отговаря бързо — не с анонимен кол-център.</p>
+            </div>
+            <div class="feature">
+              <span class="feature-num">03</span>
+              <h3>Безплатна регистрация</h3>
+              <p>Стартирате нова фирма? Поемаме регистрацията изцяло безплатно при сключен договор за обслужване.</p>
+            </div>
+          </div>
+          <div class="reveal" style="text-align:center; margin-top:3rem;">
+            <a class="btn btn-primary btn-lg" href="pages/contact.html">Започни с безплатна консултация</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section class="section section--sand">
+        <div class="container">
+          <div class="section-head center reveal">
+            <p class="eyebrow">Как работим</p>
+            <h2>Прост процес, ясен от първия ден</h2>
+          </div>
+          <div class="steps" data-stagger style="margin-top: 3rem;">
+            <div class="step"><h3>Запознаване и договор</h3><p>Безплатна консултация, в която определяме обхвата, сроковете и начина на комуникация.</p></div>
+            <div class="step"><h3>Месечно обслужване</h3><p>Събираме документите, осчетоводяваме, подаваме ДДС и ТРЗ и ви изпращаме ясни отчети.</p></div>
+            <div class="step"><h3>Контрол и спокойствие</h3><p>Напомняния за срокове, периодични справки и пълна подготовка при проверки.</p></div>
+          </div>
+          <div class="reveal" style="text-align:center; margin-top:3rem;">
+            <a class="btn btn-dark btn-lg" href="pages/contact.html">Заяви консултация</a>
+            <a class="btn btn-ghost btn-lg" href="tel:+359885738666" style="margin-left:.6rem;">0885 738 666</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOUNDERS -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head center reveal">
+            <p class="eyebrow">Хората зад цифрите</p>
+            <h2>Опит и лично отношение</h2>
+            <p class="lead">Малък, отдаден екип означава, че винаги говорите с човек, който познава вашия казус.</p>
+          </div>
+          <div class="founders" data-stagger style="margin-top: 3rem;">
+            <article class="founder">
+              <div class="founder-photo">
+                <picture>
+                  <source type="image/webp" srcset="img/team/georgi-420.webp 420w, img/team/georgi-640.webp 640w" sizes="150px" />
+                  <img src="img/team/georgi.jpg" width="420" height="525" alt="Георги — основател и управител на ДИС 99" loading="lazy" />
+                </picture>
+              </div>
+              <div>
+                <h3>Георги</h3>
+                <p class="role">Основател и управител</p>
+                <p>Над 18 години счетоводна практика. Води сложните данъчни казуси и стои зад спокойствието на всеки клиент.</p>
+              </div>
+            </article>
+            <article class="founder">
+              <div class="founder-photo">
+                <picture>
+                  <source type="image/webp" srcset="img/team/snezhana-420.webp 420w, img/team/snezhana-640.webp 640w" sizes="150px" />
+                  <img src="img/team/snezhana.jpg" width="420" height="525" alt="Снежана — счетоводител в ДИС 99" loading="lazy" />
+                </picture>
+              </div>
+              <div>
+                <h3>Снежана</h3>
+                <p class="role">Счетоводител · Social media</p>
+                <p>Грижи се за текущото обслужване и комуникацията с клиентите — бързо, точно и с усмивка.</p>
+              </div>
+            </article>
+          </div>
+          <div class="center reveal" style="text-align:center; margin-top: 2.5rem;">
+            <a class="btn btn-ghost" href="pages/about.html">Запознай се с екипа</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section class="section section--sand">
+        <div class="container">
+          <div class="section-head center reveal">
+            <p class="eyebrow">Цени</p>
+            <h2>Прозрачни пакети без скрити такси</h2>
+            <p class="lead">Ориентировъчни начални цени. Окончателната оферта зависи от броя документи и спецификата на бизнеса.</p>
+          </div>
+          <div class="price-grid" data-stagger style="margin-top: 3rem;">
+            <div class="price">
+              <div class="price-name">Старт</div>
+              <p class="price-desc">За нови и малки фирми без ДДС регистрация.</p>
+              <div class="price-tag"><span class="price-from">от</span><span class="price-amt">120</span><span class="price-unit">лв./мес.</span></div>
+              <ul>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Текущо счетоводство</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>До 20 документа месечно</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Годишно приключване</li>
+              </ul>
+              <a class="btn btn-ghost btn-block" href="pages/contact.html">Запитване</a>
+            </div>
+            <div class="price featured">
+              <div class="price-name">Бизнес</div>
+              <p class="price-desc">За активни фирми с ДДС и наети служители.</p>
+              <div class="price-tag"><span class="price-from">от</span><span class="price-amt">260</span><span class="price-unit">лв./мес.</span></div>
+              <ul>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Всичко от „Старт“</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>ДДС и VIES</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>ТРЗ до 5 служители</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Личен счетоводител</li>
+              </ul>
+              <a class="btn btn-primary btn-block" href="pages/contact.html">Запитване</a>
+            </div>
+            <div class="price">
+              <div class="price-name">Премиум</div>
+              <p class="price-desc">За по-голям бизнес и eCommerce с висок обем.</p>
+              <div class="price-tag"><span class="price-from">от</span><span class="price-amt">480</span><span class="price-unit">лв./мес.</span></div>
+              <ul>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Всичко от „Бизнес“</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Неограничени документи</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Управленски отчети</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Приоритетна поддръжка</li>
+              </ul>
+              <a class="btn btn-ghost btn-block" href="pages/contact.html">Запитване</a>
+            </div>
+          </div>
+          <p class="reveal" style="text-align:center; margin-top:2rem; color:var(--muted); font-size:.95rem;">
+            <!-- TODO: потвърди реалните начални цени за всеки пакет -->
+            Цените са ориентировъчни. <a class="link-arrow" href="pages/pricing.html" style="color:var(--brass-deep)">Виж пълните детайли за цените →</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section section--dark">
+        <div class="container cta-band reveal">
+          <h2>Готови за спокойно счетоводство?</h2>
+          <p>Разкажете ни накратко за бизнеса си и приблизителния брой документи на месец. Ще се свържем с вас с ясна оферта.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary btn-lg" href="pages/contact.html">Заяви консултация</a>
+            <a class="btn btn-ghost btn-lg" href="tel:+359885738666">0885 738 666</a>
+          </div>
         </div>
       </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="site-footer">
-      <div class="container footer-grid">
-        <div>
-          <div class="footer-brand">Счетоводна къща “Пример”</div>
-          <p class="small">
-            ЕИК: 123456789 • ДДС №: BG123456789<br />
-            Адрес: София, бул. Пример 1
-          </p>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="index.html" aria-label="ДИС 99 — начало">
+              <img class="brand-mark" src="img/logo-mark.svg" width="48" height="48" alt="" aria-hidden="true" />
+              <span class="brand-text">
+                <span class="brand-name">ДИС&nbsp;<span class="nines">99</span></span>
+                <span class="brand-sub">Счетоводна къща</span>
+              </span>
+            </a>
+            <p class="footer-about">Счетоводно обслужване за малък и среден бизнес в Пловдив и дистанционно в цялата страна — от 2008 г.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3l.5-3H14V4.5c0-.8.3-1.5 1.5-1.5H18V.2C17.6.1 16.4 0 15.3 0 12.8 0 11 1.5 11 4.3V6H8v3h3v9h3z"/></svg></a>
+              <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+              <a href="#" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0M.5 8h4V24h-4zM8 8h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1V24h-4v-6.9c0-1.64-.03-3.75-2.28-3.75-2.29 0-2.64 1.79-2.64 3.63V24H8z"/></svg></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Услуги</h4>
+            <ul>
+              <li><a href="pages/services.html">Текущо счетоводство</a></li>
+              <li><a href="pages/services.html">ДДС и VIES</a></li>
+              <li><a href="pages/services.html">ГФО</a></li>
+              <li><a href="pages/services.html">ТРЗ и заплати</a></li>
+              <li><a href="pages/services.html">Данъчна защита</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Фирмата</h4>
+            <ul>
+              <li><a href="pages/about.html">За нас</a></li>
+              <li><a href="pages/pricing.html">Цени</a></li>
+              <li><a href="pages/faq.html">Въпроси</a></li>
+              <li><a href="pages/contact.html">Контакт</a></li>
+              <li><a href="pages/privacy.html">Поверителност</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Контакт</h4>
+            <ul class="footer-contact">
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92"/></svg><a href="tel:+359885738666">0885 738 666</a></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg><a href="mailto:dis99@abv.bg">dis99@abv.bg</a></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0"/><circle cx="12" cy="10" r="3"/></svg><span>Пловдив, бул. Цариградско шосе 112</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Пн–Пт · 09:00–17:00</span></li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <div class="footer-title">Контакт</div>
-          <p class="small">
-            Тел: <a href="tel:+359888000000">+359 88 800 0000</a><br />
-            Email: <a href="mailto:office@example.bg">office@example.bg</a
-            ><br />
-            Раб. време: Пн–Пт 09:00–17:30
-          </p>
+
+        <div class="footer-bottom">
+          <span>© <span id="year">2026</span> Счетоводна къща ДИС 99. Всички права запазени.</span>
+          <span><a href="pages/privacy.html">Поверителност</a> · <a href="pages/cookies.html">Бисквитки</a></span>
         </div>
-        <div>
-          <div class="footer-title">Политики</div>
-          <p class="small">
-            <a href="pages/privacy.html">Политика за поверителност</a><br />
-            <a href="pages/cookies.html">Политика за бисквитки</a>
-          </p>
-        </div>
-      </div>
-      <div class="container footer-bottom small">
-        © <span id="year"></span> Всички права запазени.
       </div>
     </footer>
 
-    <!-- ✅ FIXED PATH + defer -->
     <script src="./js/main.js" defer></script>
   </body>
 </html>
