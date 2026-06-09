@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dis99.bg/sitemap.xml
