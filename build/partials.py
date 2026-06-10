@@ -54,12 +54,12 @@ def paths(lang, key):
     is_home = key == "index"
     if lang == "bg":
         if is_home:
-            return "", "", "/en/index.html"
-        return "../", "", "/en/pages/%s.html" % key
+            return "", "", "en/index.html"
+        return "../", "", "../en/pages/%s.html" % key
     else:  # en
         if is_home:
-            return "../", "/en", "/index.html"
-        return "../../", "", "/pages/%s.html" % key
+            return "../", "/en", "../index.html"
+        return "../../", "", "../../pages/%s.html" % key
 
 
 def header(lang, active):
