@@ -34,16 +34,13 @@ def cta_band(contact="contact.html"):
       </section>''' % contact
 
 # =================== HOME ===================
-def home_icon(p):
-    return '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">%s</svg>' % p
-
-def svc_card(icon, title, text):
+def svc_card(img, title, text):
     return '''            <article class="card">
-              <div class="card-icon">%s</div>
+              <div class="card-figure"><img src="../img/services/%s.svg" alt="" loading="lazy" width="480" height="360" /></div>
               <h3>%s</h3>
               <p>%s</p>
               <a class="card-link link-arrow" href="pages/services.html">Learn more →</a>
-            </article>''' % (home_icon(icon), title, text)
+            </article>''' % (img, title, text)
 
 index_main = '''      <section class="hero">
         <div class="container hero-grid">
@@ -94,12 +91,12 @@ index_main = '''      <section class="hero">
           </div>
           <div class="grid grid-3" data-stagger style="margin-top: 3rem;">
 ''' + "\n".join([
-    svc_card('<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/>', "Bookkeeping", "Monthly bookkeeping, bank operations, cash and full reporting with no delays."),
-    svc_card('<rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h2M8 14h2M14 10h2M14 14h2M8 18h8"/>', "VAT & VIES", "Preparing and filing VAT returns, ledgers and VIES — accurately and on time."),
-    svc_card('<path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/>', "Annual accounts", "Annual financial statements and tax returns with timely publication."),
-    svc_card('<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/>', "Payroll", "Employment contracts, payslips, social security and staff administration."),
-    svc_card('<path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/>', "Tax defense", "Advice and support during audits and inspections — calm and well prepared."),
-    svc_card('<path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/>', "Registration & start", "Company and VAT registration and start-up advice — free with a service contract."),
+    svc_card('bookkeeping', "Bookkeeping", "Monthly bookkeeping, bank operations, cash and full reporting with no delays."),
+    svc_card('vat', "VAT & VIES", "Preparing and filing VAT returns, ledgers and VIES — accurately and on time."),
+    svc_card('annual', "Annual accounts", "Annual financial statements and tax returns with timely publication."),
+    svc_card('payroll', "Payroll", "Employment contracts, payslips, social security and staff administration."),
+    svc_card('defense', "Tax defense", "Advice and support during audits and inspections — calm and well prepared."),
+    svc_card('registration', "Registration & start", "Company and VAT registration and start-up advice — free with a service contract."),
 ]) + '''
           </div>
           <div class="reveal" style="text-align:center; margin-top:3rem;">
@@ -129,6 +126,38 @@ index_main = '''      <section class="hero">
       <section class="section section--sand">
         <div class="container">
           <div class="section-head center reveal">
+            <p class="eyebrow">Who we work with</p>
+            <h2>We know your type of business</h2>
+            <p class="lead">Every business has its specifics — we speak the language of yours.</p>
+          </div>
+          <div class="grid grid-2" data-stagger style="margin-top: 3rem;">
+            <article class="card">
+              <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 9h2M13 9h2M9 13h2M13 13h2M11 21v-4h2v4"/></svg></div>
+              <h3>Ltd companies</h3>
+              <p>Full service for small and medium companies — from daily operations to annual closing and dividends.</p>
+            </article>
+            <article class="card">
+              <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+              <h3>Freelancers & professionals</h3>
+              <p>Doctors, lawyers, designers, consultants — optimal taxation and minimal administrative burden for you.</p>
+            </article>
+            <article class="card">
+              <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1.6"/><circle cx="19" cy="21" r="1.6"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 2-1.6L22 7H6"/></svg></div>
+              <h3>eCommerce & online business</h3>
+              <p>Online stores, platforms and dropshipping — EU VAT, VIES, courier and payment integrations.</p>
+            </article>
+            <article class="card">
+              <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
+              <h3>Start-ups</h3>
+              <p>We register your company for free, guide you through the first steps and grow together with you.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head center reveal">
             <p class="eyebrow">How we work</p>
             <h2>A simple process, clear from day one</h2>
           </div>
@@ -144,7 +173,7 @@ index_main = '''      <section class="hero">
         </div>
       </section>
 
-      <section class="section">
+      <section class="section section--sand">
         <div class="container">
           <div class="section-head center reveal">
             <p class="eyebrow">The people behind the numbers</p>
@@ -153,16 +182,43 @@ index_main = '''      <section class="hero">
           </div>
           <div class="founders" data-stagger style="margin-top: 3rem;">
             <article class="founder">
-              <div class="founder-photo"><picture><source type="image/webp" srcset="../img/team/georgi-420.webp 420w, ../img/team/georgi-640.webp 640w" sizes="150px" /><img src="../img/team/georgi.jpg" width="420" height="525" alt="Georgi — founder and manager of DIS 99" loading="lazy" /></picture></div>
-              <div><h3>Georgi</h3><p class="role">Founder & manager</p><p>Over 18 years of accounting practice. He leads the complex tax cases and is the guarantor of every client's peace of mind.</p></div>
+              <div class="founder-photo"><picture><source type="image/webp" srcset="../img/team/georgi-420.webp 420w, ../img/team/georgi-640.webp 640w, ../img/team/georgi-840.webp 840w" sizes="(max-width: 560px) 260px, 220px" /><img src="../img/team/georgi.jpg" width="420" height="525" alt="Georgi — founder and manager of DIS 99" loading="lazy" /></picture></div>
+              <div><h3>Georgi</h3><p class="role">Founder & manager</p><p>Founded DIS 99 in 2008 after years of experience in accounting and tax consulting. Today he personally handles the most complex cases — tax audits, planning and annual closing.</p><p>He believes good accounting shows in one thing: the client's peace of mind.</p></div>
             </article>
             <article class="founder">
-              <div class="founder-photo"><picture><source type="image/webp" srcset="../img/team/snezhana-420.webp 420w, ../img/team/snezhana-640.webp 640w" sizes="150px" /><img src="../img/team/snezhana.jpg" width="420" height="525" alt="Snezhana — accountant at DIS 99" loading="lazy" /></picture></div>
-              <div><h3>Snezhana</h3><p class="role">Accountant · Social media</p><p>She takes care of day-to-day service and client communication — fast, accurate and always with a smile.</p></div>
+              <div class="founder-photo"><picture><source type="image/webp" srcset="../img/team/snezhana-420.webp 420w, ../img/team/snezhana-640.webp 640w, ../img/team/snezhana-840.webp 840w" sizes="(max-width: 560px) 260px, 220px" /><img src="../img/team/snezhana.jpg" width="420" height="525" alt="Snezhana — accountant at DIS 99" loading="lazy" /></picture></div>
+              <div><h3>Snezhana</h3><p class="role">Accountant · Social media</p><p>Handles the day-to-day service — bookkeeping, VAT and client communication. She makes the complex sound simple and replies the same day.</p><p>She is also the face of DIS 99 on social media.</p></div>
             </article>
           </div>
           <div class="center reveal" style="text-align:center; margin-top: 2.5rem;">
             <a class="btn btn-ghost" href="pages/about.html">Meet the team</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head center reveal">
+            <p class="eyebrow">Testimonials</p>
+            <h2>What our clients say</h2>
+          </div>
+          <!-- TODO: replace sample testimonials with real client quotes -->
+          <div class="quotes" data-stagger style="margin-top: 3rem;">
+            <blockquote class="quote">
+              <div class="quote-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <p>"We have worked with DIS 99 for years without a single missed deadline. Everything is clear, on time and stress-free."</p>
+              <footer><strong>Ltd company owner</strong><span>Plovdiv</span></footer>
+            </blockquote>
+            <blockquote class="quote">
+              <div class="quote-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <p>"We moved our accounting to them mid-year — the transition was completely smooth."</p>
+              <footer><strong>Online store manager</strong><span>eCommerce client</span></footer>
+            </blockquote>
+            <blockquote class="quote">
+              <div class="quote-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <p>"I always get an answer the same day. It feels like having a partner, not just an accountant."</p>
+              <footer><strong>Freelance professional</strong><span>remote service</span></footer>
+            </blockquote>
           </div>
         </div>
       </section>
@@ -241,12 +297,22 @@ about_main = page_hero("About", "The people behind DIS 99",
     "A small accounting firm in Plovdiv with a big eye for detail. Since 2008 we have helped entrepreneurs grow with peace of mind.") + '''
       <section class="section"><div class="container">
           <div class="prose reveal" style="margin-inline:auto; text-align:center;"><p class="lead" style="color:var(--ink)">We believe accounting is not just an obligation but a backbone for every business. That is why we work transparently, keep deadlines strictly and explain things in plain language — no jargon, no stress.</p></div>
+          <!-- TODO: confirm/adjust team bios -->
           <div class="founders" data-stagger style="margin-top:3.5rem;">
-            <article class="founder"><div class="founder-photo"><picture><source type="image/webp" srcset="../../img/team/georgi-420.webp 420w, ../../img/team/georgi-640.webp 640w" sizes="150px" /><img src="../../img/team/georgi.jpg" width="420" height="525" alt="Georgi — founder and manager of DIS 99" loading="lazy" /></picture></div><div><h3>Georgi</h3><p class="role">Founder & manager</p><p>With over 18 years of accounting practice, Georgi founded DIS 99 in 2008. He leads the most complex tax cases and is the guarantor of every client's peace of mind.</p></div></article>
-            <article class="founder"><div class="founder-photo"><picture><source type="image/webp" srcset="../../img/team/snezhana-420.webp 420w, ../../img/team/snezhana-640.webp 640w" sizes="150px" /><img src="../../img/team/snezhana.jpg" width="420" height="525" alt="Snezhana — accountant at DIS 99" loading="lazy" /></picture></div><div><h3>Snezhana</h3><p class="role">Accountant · Social media</p><p>Snezhana takes care of day-to-day service and client relationships. Fast, accurate and always smiling — she is the face you talk to most often.</p></div></article>
+            <article class="founder"><div class="founder-photo"><picture><source type="image/webp" srcset="../../img/team/georgi-420.webp 420w, ../../img/team/georgi-640.webp 640w, ../../img/team/georgi-840.webp 840w" sizes="(max-width: 560px) 260px, 220px" /><img src="../../img/team/georgi.jpg" width="420" height="525" alt="Georgi — founder and manager of DIS 99" loading="lazy" /></picture></div><div><h3>Georgi</h3><p class="role">Founder & manager</p><p>Georgi founded DIS 99 in 2008 after years of experience in accounting and tax consulting. Today he personally leads the most complex cases — tax audits, annual closing and tax planning — and is the person clients call with the difficult questions.</p><p>He insists on deadline discipline and a direct, honest relationship. He believes good accounting shows in one thing: the client's peace of mind.</p></div></article>
+            <article class="founder"><div class="founder-photo"><picture><source type="image/webp" srcset="../../img/team/snezhana-420.webp 420w, ../../img/team/snezhana-640.webp 640w, ../../img/team/snezhana-840.webp 840w" sizes="(max-width: 560px) 260px, 220px" /><img src="../../img/team/snezhana.jpg" width="420" height="525" alt="Snezhana — accountant at DIS 99" loading="lazy" /></picture></div><div><h3>Snezhana</h3><p class="role">Accountant · Social media</p><p>Snezhana is responsible for the day-to-day service — bookkeeping, VAT returns and daily client communication. She is the person you will talk to most often, known for quick replies and the patience to explain every detail.</p><p>Beyond the numbers, she also runs the firm's social media — making accounting understandable and approachable for everyone.</p></div></article>
           </div>
       </div></section>
       <section class="section section--sand"><div class="container">
+          <div class="section-head center reveal"><p class="eyebrow">Our story</p><h2>A journey shared with our clients</h2></div>
+          <div class="timeline reveal" style="margin-top:3rem;">
+            <div class="tl-item"><div class="tl-year">2008</div><h3>DIS 99 is founded</h3><p>Georgi starts the firm in Plovdiv with a clear idea — accounting explained in plain language, with every deadline kept.</p></div>
+            <div class="tl-item"><div class="tl-year">2015</div><h3>Services expand</h3><p>Full payroll service, tax defense during audits and consulting for growing businesses join the core bookkeeping.</p></div>
+            <div class="tl-item"><div class="tl-year">2020</div><h3>Remote service</h3><p>We switch to electronic document exchange and start serving clients across the whole country.</p></div>
+            <div class="tl-item"><div class="tl-year">Today</div><h3>50+ active clients</h3><p>A family team with 18+ years of experience, trusted by businesses from Plovdiv and all over Bulgaria.</p></div>
+          </div>
+      </div></section>
+      <section class="section"><div class="container">
           <div class="section-head center reveal"><p class="eyebrow">Our values</p><h2>The principles we work by</h2></div>
           <div class="grid grid-3" data-stagger style="margin-top:2.5rem;">
             <article class="card"><h3>Transparency</h3><p>No hidden fees and no surprises. You know exactly what you pay for and what happens with your company.</p></article>

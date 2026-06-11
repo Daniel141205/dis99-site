@@ -134,31 +134,34 @@ about_main = page_hero("За нас", "Хората зад ДИС 99",
             <p class="lead" style="color:var(--ink)">Вярваме, че счетоводството не е просто задължение, а опора за всеки бизнес. Затова работим прозрачно, спазваме сроковете стриктно и обясняваме нещата на разбираем език — без сложни термини и без стрес.</p>
           </div>
 
+          <!-- TODO: потвърдете/коригирайте биографиите на екипа -->
           <div class="founders" data-stagger style="margin-top:3.5rem;">
             <article class="founder">
               <div class="founder-photo">
                 <picture>
-                  <source type="image/webp" srcset="../img/team/georgi-420.webp 420w, ../img/team/georgi-640.webp 640w" sizes="150px" />
+                  <source type="image/webp" srcset="../img/team/georgi-420.webp 420w, ../img/team/georgi-640.webp 640w, ../img/team/georgi-840.webp 840w" sizes="(max-width: 560px) 260px, 220px" />
                   <img src="../img/team/georgi.jpg" width="420" height="525" alt="Георги — основател и управител на ДИС 99" loading="lazy" />
                 </picture>
               </div>
               <div>
                 <h3>Георги</h3>
                 <p class="role">Основател и управител</p>
-                <p>С над 18 години счетоводна практика Георги основава ДИС 99 през 2008 г. Води най-сложните данъчни казуси и е гарантът за спокойствието на всеки клиент.</p>
+                <p>Георги основава ДИС 99 през 2008 г. след дългогодишен опит в счетоводството и данъчното консултиране. Днес той лично води най-сложните казуси — данъчни ревизии, годишно приключване и данъчно планиране — и е човекът, на когото клиентите се обаждат при трудните въпроси.</p>
+                <p>Държи на дисциплината в сроковете и на прякото, честно отношение. Вярва, че доброто счетоводство се познава по едно нещо: спокойствието на клиента.</p>
               </div>
             </article>
             <article class="founder">
               <div class="founder-photo">
                 <picture>
-                  <source type="image/webp" srcset="../img/team/snezhana-420.webp 420w, ../img/team/snezhana-640.webp 640w" sizes="150px" />
+                  <source type="image/webp" srcset="../img/team/snezhana-420.webp 420w, ../img/team/snezhana-640.webp 640w, ../img/team/snezhana-840.webp 840w" sizes="(max-width: 560px) 260px, 220px" />
                   <img src="../img/team/snezhana.jpg" width="420" height="525" alt="Снежана — счетоводител в ДИС 99" loading="lazy" />
                 </picture>
               </div>
               <div>
                 <h3>Снежана</h3>
                 <p class="role">Счетоводител · Social media</p>
-                <p>Снежана се грижи за текущото обслужване и за връзката с клиентите. Бърза, точна и винаги усмихната — тя е лицето, с което общувате най-често.</p>
+                <p>Снежана отговаря за текущото обслужване — осчетоводяване, ДДС декларации и ежедневната комуникация с клиентите. Тя е човекът, с когото ще общувате най-често, и клиентите я познават с бързите отговори и търпението, с което обяснява всяка подробност.</p>
+                <p>Освен с цифрите, Снежана се занимава и със социалните мрежи на фирмата — прави счетоводството разбираемо и достъпно за всички.</p>
               </div>
             </article>
           </div>
@@ -166,6 +169,37 @@ about_main = page_hero("За нас", "Хората зад ДИС 99",
       </section>
 
       <section class="section section--sand">
+        <div class="container">
+          <div class="section-head center reveal">
+            <p class="eyebrow">Нашата история</p>
+            <h2>Път, извървян с клиентите ни</h2>
+          </div>
+          <div class="timeline reveal" style="margin-top:3rem;">
+            <div class="tl-item">
+              <div class="tl-year">2008</div>
+              <h3>Основаване на ДИС 99</h3>
+              <p>Георги създава счетоводната къща в Пловдив с ясна идея — счетоводство, което се обяснява на разбираем език и спазва всеки срок.</p>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">2015</div>
+              <h3>Разширяване на услугите</h3>
+              <p>Към текущото счетоводство се добавят пълно ТРЗ обслужване, данъчна защита при проверки и консултации за растящ бизнес.</p>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">2020</div>
+              <h3>Дистанционно обслужване</h3>
+              <p>Преминаваме към електронен обмен на документи и започваме да обслужваме клиенти от цялата страна — без значение къде се намират.</p>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">Днес</div>
+              <h3>Над 50 активни клиенти</h3>
+              <p>Семеен екип с над 18 години опит, на който фирми от Пловдив и цяла България поверяват счетоводството си.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
         <div class="container">
           <div class="section-head center reveal">
             <p class="eyebrow">Нашите ценности</p>

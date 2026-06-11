@@ -79,7 +79,16 @@ def header(lang, active):
     else:
         en_link, bg_link = self_link, other
     cta_href = "pages/contact.html" if active == "index" else "contact.html"
-    return ("""    <header class="site-header" id="header">
+    return ("""    <div class="topbar">
+      <div class="container topbar-row">
+        <div class="topbar-group">
+          <span class="topbar-item">{ic_phone}<a href="tel:+359885738666">0885 738 666</a></span>
+          <span class="topbar-item">{ic_mail}<a href="mailto:dis99@abv.bg">dis99@abv.bg</a></span>
+        </div>
+        <span class="topbar-item">{ic_clock}{hours}</span>
+      </div>
+    </div>
+    <header class="site-header" id="header">
       <div class="container header-row">
         <a class="brand" href="{home}" aria-label="ДИС 99 — {homelabel}">
           <img class="brand-mark" src="{ap}img/logo-mark.svg" width="48" height="48" alt="" aria-hidden="true" />
@@ -107,7 +116,11 @@ def header(lang, active):
         bg_link=bg_link, en_link=en_link,
         bg_cur=' aria-current="true"' if lang == "bg" else "",
         en_cur=' aria-current="true"' if lang == "en" else "",
-        cta_href=cta_href, cta=CTA[lang])
+        cta_href=cta_href, cta=CTA[lang],
+        ic_phone=ICON_PHONE.replace('width="18" height="18"', 'width="14" height="14"'),
+        ic_mail=ICON_MAIL.replace('width="18" height="18"', 'width="14" height="14"'),
+        ic_clock=ICON_CLOCK.replace('width="18" height="18"', 'width="14" height="14"'),
+        hours=HOURS[lang])
 
 
 def footer(lang, active):
