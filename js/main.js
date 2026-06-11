@@ -62,6 +62,54 @@
     }
   }
 
+  /* Interactive timeline (about page) */
+  const timeline = document.querySelector(".timeline");
+  if (timeline) {
+    const items = timeline.querySelectorAll(".tl-item");
+    const line = timeline.querySelector(".tl-line");
+
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      items.forEach((it) => it.classList.add("in", "active"));
+      if (line) line.style.height = "100%";
+    } else {
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in");
+              io.unobserve(entry.target);
+            }
+          }
+        },
+        { threshold: 0.3, rootMargin: "0px 0px -10% 0px" }
+      );
+      items.forEach((it) => io.observe(it));
+
+      let ticking = false;
+      const update = () => {
+        ticking = false;
+        const mid = window.innerHeight * 0.62;
+        if (line) {
+          const rect = timeline.getBoundingClientRect();
+          const h = Math.max(0, Math.min(rect.height, mid - rect.top));
+          line.style.height = h + "px";
+        }
+        items.forEach((it) => {
+          it.classList.toggle("active", it.getBoundingClientRect().top < mid);
+        });
+      };
+      const onScroll = () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(update);
+        }
+      };
+      update();
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll, { passive: true });
+    }
+  }
+
   /* Contact form */
   const form = document.getElementById("contact-form");
   if (form) {
